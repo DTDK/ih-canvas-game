@@ -6,8 +6,10 @@ function main() {
   var ENEGERY_DECREASE = 1;
   var SPEED = 1;
 
+  var mainElement = document.querySelector('#site-main');
+
   var stage;
-  var score;
+  var game;
 
   // -- SPLASH
 
@@ -34,7 +36,6 @@ function main() {
     splashElement.appendChild(startGameButton);
 
     // apppend to site-main
-    var mainElement = document.querySelector('#site-main');
     mainElement.appendChild(splashElement);
 
     // bind click on start play button
@@ -52,29 +53,16 @@ function main() {
 
   function buildGame() {
     stage = 'game';
-    score = 0;
+    game = new Game(mainElement);
 
-    // create dom elements
-    // - create canvas
-    // apppend to site main
-
-
-    // create a player
-    // create array of enemies
-
-    // bind keys (document addEventListener for key down)
-    // -> change direction of player
-    // start the "interval"
-
-    destroyGame();
-    buildGameOver();
+    window.setTimeout(function () {
+      destroyGame();
+      buildGameOver();
+    }, 5000);
   }
 
   function destroyGame() {
-
-    // stop the interval
-    // unbind keys
-    // destroy game dom
+    game.destroy();
   }
 
   // -- GAME OVER
@@ -98,7 +86,7 @@ function main() {
     gameOverElement.appendChild(title);
 
     var yourScore = document.createElement('h2');
-    yourScore.innerText = 'your score: ' + score;
+    yourScore.innerText = 'your score: ' + game.score;
     gameOverElement.appendChild(yourScore);
 
     playAgainButton = document.createElement('button');
@@ -106,7 +94,6 @@ function main() {
     gameOverElement.appendChild(playAgainButton);
 
     // apppend to site-main
-    var mainElement = document.querySelector('#site-main');
     mainElement.appendChild(gameOverElement);
 
     // bind click on start play button
@@ -119,6 +106,7 @@ function main() {
     // remove gameOver from dom
     gameOverElement.remove();
   }
+
   buildSplash();
 
 }

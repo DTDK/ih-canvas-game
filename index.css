@@ -22,8 +22,9 @@ button {
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  background: black;
+  background: grey;
   color: white;
+  padding: 20px;
 }
 
 h1 {}
@@ -45,6 +46,10 @@ h3 {}
 
 
 #splash {
+  text-align: center;
+}
+
+#game-over {
   text-align: center;
 }
 
