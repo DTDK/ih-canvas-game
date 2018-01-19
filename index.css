@@ -1,0 +1,50 @@
+
+/* ---- reset ---- */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  color: white;
+  background: green;
+}
+
+
+/* ---- typography ---- */
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: black;
+  color: white;
+}
+
+h1 {}
+
+h2 {}
+
+h3 {}
+
+
+
+
+/* ---- layout ---- */
+
+
+
+
+
+/* ---- components ---- */
+
+
+#splash {
+  text-align: center;
+}
+
